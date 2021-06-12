@@ -1,0 +1,41 @@
+@import "./styleDefoult/mixin";
+header {
+  @media screen and (min-width: 320px){
+    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
+    url(../images/bg-320.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
+      url(../images/bg-320@2x.jpg);
+    }
+  }
+  @media screen and (min-width: 768px){
+    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
+    url(../images/bg-786.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
+      url(../images/bg-768@2x.jpg);
+    }
+  }
+  @media screen and (min-width: 1280px){
+    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
+    url(../images/bg-1280.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
+      url(../images/bg1280@2x.jpg);
+    }
+  }
+  .header-container{
+    @include container();
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+      color: #FFF;
+
+  }
+}

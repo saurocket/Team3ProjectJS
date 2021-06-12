@@ -1,0 +1,44 @@
+
+
+
+@mixin container() {
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: 320px) {
+
+
+        padding-left: 25px;
+        padding-right: 25px;
+        max-width: 600px;
+    }
+    @media screen and (max-width: 325px){
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    @media screen and (min-width: 768px) {
+        padding-left: 85px;
+        padding-right: 85px;
+
+
+        max-width: 1000px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding-left: 175px;
+        padding-right: 175px;
+        max-width: 1280px;
+
+    }
+}
+button,
+.discription-btn,
+.discription-btn,
+.header-button
+{
+&:hover{
+    cursor: pointer;
+}
+}
