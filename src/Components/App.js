@@ -6,7 +6,8 @@ const root = document.getElementById('root')
 
 export const App  = () => {
   Header(root)
-  Modal(root)
+  // второй параментр при true модалка есть, при false модалки нет
+  Modal(root, true)
 
 }
 

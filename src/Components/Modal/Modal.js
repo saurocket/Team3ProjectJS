@@ -1,11 +1,13 @@
 import codePic from '../../images/modal/ticket1.svg';
 import closePic from '../../images/modal/symbol-defs.svg';
 import mainPic from '../../images/modal/pic.png';
-export const Modal = (root) => {
+
+export const Modal = (root, modalFlag) => {
+  if (!modalFlag) return;
   let srcImg = 'https://abnews.ru/wp-content/uploads/2016/04/black-eyed-peas.jpg';  
   let alt = 'alt text';
   const elements =`
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop" data-modal>
       <div class="modal-container">
         <div class="icon-block">
           <img src="${srcImg}" alt="${alt}" class="event-icon" />
@@ -81,3 +83,20 @@ export const Modal = (root) => {
 
 
 };
+
+
+// (() => {
+//       const refs = {
+//         openModalBtn: document.querySelector('[data-modal-open]'),
+//         closeModalBtn: document.querySelector('[data-modal-close]'),
+//         modal: document.querySelector('[data-modal]'),
+//       };
+
+//       refs.openModalBtn.addEventListener('click', toggleModal);
+//       refs.closeModalBtn.addEventListener('click', toggleModal);
+
+//       function toggleModal() {
+//         document.body.classList.toggle('modal-open');
+//         refs.modal.classList.toggle('is-hidden');
+//       }
+//     })();
