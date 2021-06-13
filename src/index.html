@@ -6,14 +6,30 @@
     <title>Заголовок страницы</title>
     <link
       rel="stylesheet"
-
       integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
       crossorigin="anonymous"
     />
   </head>
   <body>
-
+    <button type="button" data-modal-open>modal</button>
     <div id="root"></div>
     <script src="./index.js"></script>
   </body>
+  <script>
+    (() => {
+      const refs = {
+        openModalBtn: document.querySelector('[data-modal-open]'),
+        closeModalBtn: document.querySelector('[data-modal-close]'),
+        modal: document.querySelector('[data-modal]'),
+      };
+
+      refs.openModalBtn.addEventListener('click', toggleModal);
+      refs.closeModalBtn.addEventListener('click', toggleModal);
+
+      function toggleModal() {
+        document.body.classList.toggle('modal-open');
+        refs.modal.classList.toggle('is-hidden');
+      }
+    })();
+  </script>
 </html>
