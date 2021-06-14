@@ -6,17 +6,17 @@ import logIcon from "../../images/header-img/symbol-defs.svg"
 
 export const Header = (root) => {
   const elements =`<header>
-      
+
              <div class="header-container">
-      <picture class="header-img"> 
+      <picture class="header-img">
                     <source srcset="${logMob}" media="(max-width:767px") />
                     <source srcset="${logTab}" media="(max-width:1280px") />
-                    <source srcset="${logDesc}" media="(min-width:1280px") />      
-                    <img src="${logDesc}" alt="Логотип">    
+                    <source srcset="${logDesc}" media="(min-width:1280px") />
+                    <img src="${logDesc}" alt="Логотип">
                 </picture>
                 <h1 class="header-name">FIND BEST EVENTS <br>
              AROUND THE WORLD</h1>
-           
+
       <ul class="header-input">
       <li class="header-start"><input id="text" type="text" name="text" placeholder="Start searching">
       <svg width="12px" height="12px"><use href="${logIcon}#icon-vector"></use></svg></li>

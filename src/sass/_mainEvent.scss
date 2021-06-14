@@ -1,0 +1,29 @@
+@import "styleDefoult/mixin";
+main{
+  .container{
+    @include container()
+  }
+}
+.event-list{
+  display: grid;
+  @media screen and (min-width: 320px){
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(10,1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 30px;
+  }
+  @media screen and (min-width: 768px){
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(7,1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 60px;
+  }
+  @media screen and (min-width: 1280px){
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-column-gap: 70px;
+    grid-row-gap: 60px;
+  }
+
+
+}
