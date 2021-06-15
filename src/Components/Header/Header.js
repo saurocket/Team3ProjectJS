@@ -18,7 +18,7 @@ export const Header = (root) => {
              AROUND THE WORLD</h1>
 
       <ul class="header-input">
-      <li class="header-start"><input id="text" type="text" name="text" placeholder="Start searching">
+      <li class="header-start"><input id="title" type="text" name="text" placeholder="Start searching">
       <svg width="12px" height="12px"><use href="${logIcon}#icon-vector"></use></svg></li>
       <li class="header-country"><input id="text" type="text" name="text" placeholder="Choose country">
       <svg width="12px" height="12px"><use href="${logIcon}#icon-polygon"></use></svg></li>
