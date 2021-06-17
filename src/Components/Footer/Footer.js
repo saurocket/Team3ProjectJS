@@ -34,7 +34,7 @@ export const Footer = root => {
             }
           })
           .join('');
-        const elements = `<footer><p>© 2021 | All Rights Reserved | Developed with ♥ by&nbsp; <a class="footerModalOpen" href=""> GoIT Students</a></p><div class="is-hidden footerModal"><ul class="tList">${team}</ul></div></footer>`;
+        const elements = `<footer><p>© 2021 | All Rights Reserved | Developed with ♥ by&nbsp; <a class="footerModalOpen" href=""> GoIT Students</a></p><div class="is-hidden footerModal"><h3 class="footerHeadline">Над проектом старались:</h3><ul class="tList">${team}</ul></div></footer>`;
         root.insertAdjacentHTML('beforeend', elements);
         logicFoter();
       } catch (e) {

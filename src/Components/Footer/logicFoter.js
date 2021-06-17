@@ -7,7 +7,7 @@ export default function logicFoter() {
 
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.modal.addEventListener('click', e => {
-    if (e.target.className === 'tList') {
+    if (e.target.className === 'footerModal') {
       toggleModal(e);
     }
   });
