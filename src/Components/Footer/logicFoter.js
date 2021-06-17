@@ -6,7 +6,11 @@ export default function logicFoter() {
   };
 
   refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.modal.addEventListener('click', toggleModal);
+  refs.modal.addEventListener('click', e => {
+    if (e.target.className === 'tList') {
+      toggleModal(e);
+    }
+  });
   refs.modal.addEventListener('keydown', e => {
     console.log(e);
     if (e.key === 'Escape') {
@@ -18,6 +22,7 @@ export default function logicFoter() {
     event.preventDefault();
 
     // document.body.classList.toggle('modal-open');
+
     refs.modal.classList.toggle('is-hidden');
   }
 }
