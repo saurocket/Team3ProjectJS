@@ -17,6 +17,25 @@ footer {
   font-size: 14px;
   line-height: 17px;
   text-align: center;
+  p {
+    margin-left: 25px;
+    margin-right: 25px;
+    a {
+      font-style: normal;
+      color: black;
+      color: #ff0000;
+      text-decoration: none;
+      &:active {
+        color: #ff0000;
+      }
+      &:visited {
+        color: #0c003fd0;
+      }
+      &:hover {
+        color: #339900;
+      }
+    }
+  }
 
   .footerModal {
     position: fixed;
@@ -29,29 +48,17 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     background-color: rgba(56, 54, 54, 0.94);
     font-style: normal;
 
     transition: 1250ms cubic-bezier(0.4, 0, 0.01, 1);
-    p {
-      margin-left: 25px;
-      margin-right: 25px;
-      a {
-        font-style: normal;
-        color: black;
-        color: #ff0000;
-        text-decoration: none;
-        &:active {
-          color: #ff0000;
-        }
-        &:visited {
-          color: #0c003fd0;
-        }
-        &:hover {
-          color: #339900;
-        }
-      }
+
+    .footerHeadline {
+      display: inline;
+      color: #fff;
+      font-size: xx-large;
     }
 
     .tList {
@@ -71,9 +78,8 @@ footer {
         height: 200px;
         width: 200px;
 
-        transition: 10ms cubic-bezier(0.4, 0, 0.01, 1);
-
         perspective: 1000px;
+
         &:hover .cardFront {
           transform: rotateY(180deg);
         }
@@ -93,7 +99,7 @@ footer {
           justify-content: center;
           align-items: center;
 
-          transition: 1s;
+          transition: 500ms cubic-bezier(0.4, 0, 0.01, 1);
           backface-visibility: hidden;
           overflow: hidden;
 
