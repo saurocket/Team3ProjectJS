@@ -4,6 +4,8 @@ import { Modal } from './Modal/Modal';
 import { Main } from './Main/Main';
 
 import { Footer } from './Footer/Footer';
+import store from '../Store/store';
+
 
 
 const root = document.getElementById('root');
@@ -18,5 +20,15 @@ export const App = () => {
 
 }
 
+store.subscribe(()=> {
+  const state = store.getState()
 
+  if (state.events.isFetching == 2){
+    Main(root, state.events.actualEvents)
+    console.log('render')
+  }
+
+
+
+})
 

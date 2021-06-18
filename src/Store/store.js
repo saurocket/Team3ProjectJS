@@ -2,12 +2,13 @@ import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 
 import thunkMiddleware  from "redux-thunk"
 import { formReducer } from './formReducer';
+import { eventsReducer } from './eventsReducer';
 
 
 
 let reducers = combineReducers({
-mainForm: formReducer /// Это наш редусер
-
+mainForm: formReducer, /// Это наш редусер
+events: eventsReducer
 });
 
 
