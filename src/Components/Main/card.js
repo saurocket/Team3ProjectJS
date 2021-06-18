@@ -3,16 +3,17 @@ const tempSrc = 'https://i40.fastpic.ru/big/2012/0907/5b/70b76de8433b0a78cfb4453
 
 export const Card = (src = tempSrc ,event = 'Slipknot', date = '13-05-2021', place = 'Palace of Ukraine') => {
   const element = `
-           <li>
-          <div class="overlay-img">
-            <img src="${src}" alt="${event}" width="100%"/>
-            <div class="overlay"></div>
-          </div>
-          <div class="event">
-            <h2 class="title">${event}</h2>
-            <p class="date">${date}</p>
-            <p class="location">${place}</p>
-          </div>
-        </li>`
+    <li class="event-card">
+      <article class="card">
+        <div class="overlay-img">
+          <img class="card-img" src="${src}" alt="${event}"/>
+        </div>
+        <div class="event-info">
+          <h2 class="event-title">${event}</h2>
+          <p class="event-date">${date}</p>
+          <p class="event-location">${place}</p>
+        </div>
+    </article>
+  </li>`
   return element
 }
