@@ -1,14 +1,16 @@
 import store from './store';
 import { api } from '../API/api';
 
-const GET_EVENTS_FROM_API = 'ET_EVENTS_FROM_API';
-const GET_PAGE_INFORM_API = 'GET_PAGE_INFORM_API';
+const GET_EVENTS_FROM_API = 'ET_EVENTS_FROM_API'
+const GET_PAGE_INFORM_API = 'GET_PAGE_INFORM_API'
 const IS_FETCHING = 'IS_FETCHING'
 const RESET_REQUEST = 'RESET_REQUEST'
+const FOUND_EVENTS = 'FINDE_EVENTS'
 
 const initialState = {
   actualEvents: null,
   pageInformation: null,
+  isFound: null,
   isFetching: 0,
 }
 
@@ -24,6 +26,9 @@ export const eventsReducer = (state = initialState, action) => {
     }
     case IS_FETCHING:{
       return {...state, isFetching: action.isFetching }
+    }
+    case FOUND_EVENTS: {
+      return {...state, isFound: action.isFound}
     }
     default: return state
   }
@@ -45,6 +50,11 @@ const resetRequest = () => {
     type: RESET_REQUEST
   }
 }
+const isFoundEvents = (isFound) => {
+  return {
+    type: FOUND_EVENTS, isFound
+  }
+}
 
 
 export const getEvents = () => {
@@ -56,6 +66,7 @@ export const getEvents = () => {
 
       if (response.page.totalElements === 0){
         dispatch(resetRequest())
+        dispatch(isFoundEvents(false))
         dispatch( isFetching(2))
         dispatch( isFetching(0))
       }else{
@@ -64,6 +75,7 @@ export const getEvents = () => {
         const page = response.page;
         dispatch(setEvents(events));
         dispatch(setPageInformation(page));
+        dispatch(isFoundEvents(true))
         dispatch( isFetching(2))
         dispatch( isFetching(0))
       }
