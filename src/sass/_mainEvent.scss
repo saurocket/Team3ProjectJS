@@ -27,12 +27,46 @@ main{
 //     grid-row-gap: 60px;
 //   }
 // }
-body {
-  position: relative;
-  background-image: url("../images/bg-main/bg-noise.png");
-  background-color: rgb(24, 24, 24);
-  background-position: center;
-  background-size: cover;
+.body {
+  background-color: #0e0e0e;
+  background-position: no-repeat;
+  background-size: contain;
+
+  @media screen and (ma-width: 767px) {
+    background-position: left 0 top 364px;
+    background-image: url("../images/bg-main/noise-body-mobile.png");
+
+    @media screen and (main-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+        .body {
+          background-image: url("../images/bg-main/noise-body-mobile@2x.png");
+        }
+      }
+  }
+
+  @media screen and (main-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+    .body {
+      background-image: url("../images/bg-main/noise-body-tablet@2x.png");
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-position: center, center;
+    background-size: cover, 1280px;
+    background-image: url("../images/bg-main/noise-body-descktop.png"),
+    url("../images/bg-main/background-decor-1280.svg");
+
+    @media screen and (main-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+    .body {
+      background-image: url("../images/bg-main/noise-body-descktop@2x.png");
+      }
+    }
+  }
 }
 
 img {
@@ -121,17 +155,17 @@ img {
 }
 
 .overlay-img {
+  // position: relative;
   border-radius: 50px 0px;
 }
-
-.overlay-img,
-.card-img {
-  overflow: hidden;
-}
+// .before-img {
+//   position: absolute;
+// }
 
 .card-img {
   display: block;
   overflow: hidden;
+  border-radius: 50px 0px;
   @media screen and (min-width: 320px) {
     width: 128px;
     height: 161px;
