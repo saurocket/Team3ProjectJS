@@ -1,5 +1,6 @@
 import logicFoter from './logicFoter';
 import logoGit from '../../images/footer/GitHub-Mark/PNG/GitHub-Mark-32px.png';
+
 export const Footer = root => {
   let team = '';
   let xhr = new XMLHttpRequest();
