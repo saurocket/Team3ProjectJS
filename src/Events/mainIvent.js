@@ -1,6 +1,7 @@
 
 import store from '../Store/store';
 import { inputTypeEvent } from './FormEvant/inputTypeEvent';
+import { onChangeSelect } from './FormEvant/onChengeSelectorCountry';
 
 export const mainEvents = () => {
   const dispatch = store.dispatch
@@ -9,6 +10,6 @@ export const mainEvents = () => {
 
 
   inputTypeEvent(state, dispatch, subscribe)
-
+  onChangeSelect(state,dispatch)
 
 }

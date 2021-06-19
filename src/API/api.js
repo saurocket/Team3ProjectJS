@@ -3,8 +3,8 @@ const baseURL = 'https://app.ticketmaster.com/discovery/v2/events.json'
 
 export const api = (keyword, countryCode,size,page) => {
   let fetchURL =  `${baseURL}?apikey=${API_KEY}&size=${size}&page=${page}`
-  if (!!keyword) fetchURL+=`&keyword=${keyword}`
-  if (!!countryCode) fetchURL+=`&countryCode=${countryCode}`
+  if (keyword) fetchURL+=`&keyword=${keyword}`
+  if (countryCode) fetchURL+=`&countryCode=${countryCode}`
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
     xhr.open('GET',fetchURL)

@@ -1,5 +1,5 @@
-import { Select } from "../../country-data";
+import { getCountryCode } from '../../Store/selectors/modalSelecors';
 
 
-export const valueInput = Select.map(i => `<option value="${i.countryCode}">"${i.name}"</option>`).join("");
+export const valueInput = getCountryCode().map(i => `<option value="${i.countryCode}">${i.name}</option>`).join("");
 
