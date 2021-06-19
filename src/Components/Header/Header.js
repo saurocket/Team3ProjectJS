@@ -20,10 +20,9 @@ export const Header = (root) => {
       <ul class="header-input">
       <li class="header-start"><input id="title" type="text" name="text" placeholder="Start searching">
       <svg width="12px" height="12px"><use href="${logIcon}#icon-vector"></use></svg></li>
-      <li class="header-country"><select name="country" id="country-select">
-      <div class="input-block">
+      <li class="header-country">
+      <select class="select">
       <option value="Choose country">Choose country</option> "${valueInput}"
-      </div>
       </select>
       <svg width="12px" height="12px"><use href="${logIcon}#icon-polygon"></use></svg></li>
       </ul>
