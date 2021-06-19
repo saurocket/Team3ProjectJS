@@ -155,12 +155,21 @@ img {
 }
 
 .overlay-img {
+<<<<<<< Updated upstream
   // position: relative;
   border-radius: 50px 0px;
 }
 // .before-img {
 //   position: absolute;
 // }
+=======
+  position: relative;
+  border-radius: 50px 0px;
+}
+.before-img {
+  position: absolute;
+}
+>>>>>>> Stashed changes
 
 .card-img {
   display: block;
