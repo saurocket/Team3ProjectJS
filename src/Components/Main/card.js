@@ -7,6 +7,7 @@ export const Card = (src = tempSrc ,event = 'Slipknot', date = '13-05-2021', pla
       <article class="card">
         <div class="overlay-img">
           <img class="card-img" src="${src}" alt="${event}"/>
+          <div class="before-img"></div>
         </div>
         <div class="event-info">
           <h2 class="event-title">${event}</h2>
