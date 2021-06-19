@@ -1,10 +1,18 @@
-@font-face {
-  font-family: AstoriaDeco;
-  src: url('../fonts/AstoriaDeco.ttf');
-}
+// @font-face {
+//   font-family: AstoriaDeco;
+//   src: url('../fonts/AstoriaDeco.ttf');
+// }
 
 * {
   list-style: none;
+}
+body.modalFooter-open {
+  overflow: hidden;
+}
+@mixin flexible() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 footer {
   display: flex;
@@ -14,8 +22,7 @@ footer {
   width: 100%;
   height: 100px;
 
-  background-color: #666666;
-
+  color: #939393;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -25,16 +32,19 @@ footer {
   p {
     margin-left: 25px;
     margin-right: 25px;
+    .heart {
+      display: inline-block;
+      height: 15px;
+    }
     a {
       font-style: normal;
-      color: black;
       color: #ff0000;
       text-decoration: none;
       &:active {
         color: #ff0000;
       }
       &:visited {
-        color: #0c003fd0;
+        color: #7abfffd0;
       }
       &:hover {
         color: #339900;
@@ -47,15 +57,16 @@ footer {
     top: 0;
     left: 0;
 
+    @include flexible();
+    flex-direction: column;
+
     width: 100%;
     height: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    background-color: rgba(56, 54, 54, 0.94);
+    background-image: url('../images/bg-main/bg-noise.png');
+    background-color: rgb(24, 24, 24);
+    background-position: center;
+    background-size: cover;
     font-style: normal;
 
     transition: 1250ms cubic-bezier(0.4, 0, 0.01, 1);
@@ -63,29 +74,33 @@ footer {
     .footerHeadline {
       display: inline;
       color: #fff;
+      margin: 0;
+      margin-bottom: 2vmin;
+      // font-family: AstoriaDeco;
+      // font-style: italic;
 
-      font-family: AstoriaDeco;
-      font-style: italic;
+      color: #939393;
+
       font-weight: 100;
-      font-size: 5rem;
+      font-size: 4vmin;
+      line-height: 30px;
     }
 
     .tList {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: center;
-      justify-content: space-evenly;
+      @include flexible();
 
-      width: 90vw;
+      flex-wrap: wrap;
+      margin: 0;
+      padding-left: 0;
+      width: 90%;
 
       .tCard {
         position: relative;
 
-        margin: 20px;
-        // padding-bottom: 100px;
+        margin: 1.4vmin;
 
-        height: 200px;
-        width: 200px;
+        width: 20vmin;
+        height: 20vmin;
 
         perspective: 1000px;
 
@@ -104,66 +119,69 @@ footer {
           width: 100%;
           height: 100%;
 
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
           transition: 500ms cubic-bezier(0.4, 0, 0.01, 1);
           backface-visibility: hidden;
           overflow: hidden;
-
-          font-size: medium;
-
-          p {
-            margin: 0;
-            margin-bottom: 10px;
-            &:nth-child(1) {
-              font-weight: bold;
-            }
-          }
         }
 
         .cardFront {
-          border-top-left-radius: 30px;
-          border-bottom-right-radius: 30px;
+          border-top-left-radius: 3vmin;
+          border-bottom-right-radius: 3vmin;
+          object-fit: cover;
 
           background-color: #fff;
         }
         .cardRear {
-          border-top-right-radius: 30px;
-          border-bottom-left-radius: 30px;
+          @include flexible();
+          justify-content: space-evenly;
 
-          display: flex;
+          border-top-right-radius: 3vmin;
+          border-bottom-left-radius: 3vmin;
+
           flex-direction: column;
+          object-fit: cover;
+
+          line-height: 2.4vmin;
+          color: black;
+
           background-color: #bdbdbd;
           transform: rotateY(180deg);
-        }
-        img {
-          width: inherit;
-          width: inherit;
-          object-fit: cover;
+          p {
+            @include flexible();
+
+            margin: 0;
+            font-size: 2.4vmin;
+
+            &:nth-child(1) {
+              font-size: 2.4vmin;
+              font-weight: bold;
+            }
+          }
+          a {
+            @include flexible();
+
+            margin: 0;
+            padding: 0;
+          }
+          .logoGit {
+            display: block;
+            width: 4.4vmin;
+          }
         }
       }
     }
   }
   .is-hidden {
-    height: 0%;
-
+    visibility: hidden;
     position: fixed;
     top: 200%;
-    // left: 50%;
+
+    height: 0%;
 
     background-color: transparent;
     .tCard {
       list-style: none;
       height: 0px;
     }
-    // img {
-    //   height: 0px;
-    //   // width: 100%;
-    //   object-fit: scale-down;
-    //   transition: 1250ms cubic-bezier(0.4, 0, 0.01, 1);
-    // }
-    // transition: 1250ms cubic-bezier(0.4, 0, 0.01, 1);
   }
 }
