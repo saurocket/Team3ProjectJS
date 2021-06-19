@@ -63,22 +63,20 @@ export const getEvents = () => {
     async (dispatch) => {
       dispatch( isFetching(1))
       const response = await api(inputTitle, countryCode, pageSize, currentPage)
-
-      if (response.page.totalElements === 0){
-        dispatch(resetRequest())
-        dispatch(isFoundEvents(false))
-        dispatch( isFetching(2))
-        dispatch( isFetching(0))
-      }else{
-        console.log(response)
-        const events = response._embedded.events;
-        const page = response.page;
-        dispatch(setEvents(events));
-        dispatch(setPageInformation(page));
-        dispatch(isFoundEvents(true))
-        dispatch( isFetching(2))
-        dispatch( isFetching(0))
-      }
+        try {
+          const events = response._embedded.events;
+          const page = response.page;
+          dispatch(setEvents(events));
+          dispatch(setPageInformation(page));
+          dispatch(isFoundEvents(true))
+          dispatch( isFetching(2))
+          dispatch( isFetching(0))
+        }catch (e) {
+          dispatch(resetRequest())
+          dispatch(isFoundEvents(false))
+          dispatch( isFetching(2))
+          dispatch( isFetching(0))
+        }
     }
   );
 };

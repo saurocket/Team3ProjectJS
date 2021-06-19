@@ -5,7 +5,7 @@ export const ErrorMessage = () => {
     return;
   }
   eventListRef.innerHTML = ''
-  const textAlert = `<p>Sorry but i can not help :)</p>`
+  const textAlert = `<p class="errorMessage">Sorry but i can not help :)</p>`
   eventListRef.insertAdjacentHTML('beforeend', textAlert)
   return
 }
