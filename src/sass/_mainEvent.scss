@@ -155,18 +155,13 @@ img {
 }
 
 .overlay-img {
-
-  // position: relative;
+  position: relative;
   border-radius: 50px 0px;
 }
-// .before-img {
-//   position: absolute;
-// }
 
-// .before-img {
-//   position: absolute;
-// }
-
+.before-img {
+  position: absolute;
+}
 
 .card-img {
   display: block;
