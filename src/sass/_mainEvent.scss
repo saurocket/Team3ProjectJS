@@ -88,7 +88,6 @@ img {
 .event-card {
   position: relative;
   text-align: center;
-  margin-bottom: 39px;
   margin-bottom: 30px;
   box-sizing: border-box;
 
@@ -108,22 +107,11 @@ img {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .event-card {
-    width: calc((100% - 14px) / 2);
-    margin-right: 14px;
-    margin-bottom: 39px;
-  }
-  .event-card:nth-child(2n) {
-    margin-right: 0;
-  }
-}
-
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .event-card {
     width: calc((100% - 27px * 2) / 3);
     margin-right: 27px;
-    margin-bottom: 58px;
+    margin-bottom: 45px;
   }
   .event-card:nth-child(3n) {
     margin-right: 0;
@@ -134,7 +122,7 @@ img {
   .event-card {
     width: calc((100% - 70px * 3) / 4);
     margin-right: 56px;
-    margin-bottom: 63px;
+    margin-bottom: 50px;
   }
   .event-card:nth-child(4n) {
     margin-right: 0;
