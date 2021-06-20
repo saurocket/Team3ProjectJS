@@ -11,7 +11,7 @@ export const Pagination = (root, actualEvents) => {
       }</a></li>`;
     })
         .join('');
-    
+
   const elements = `
         <div class="pag-container">
             <ul class="pag" id="pagination">
@@ -35,7 +35,6 @@ export const Pagination = (root, actualEvents) => {
       const start = (value - 1) * notesOnPage;
       const end = start + notesOnPage;
       newEvents = actualEvents.slice(start, end);
-      /* console.log(item); */
       FinallyCard(root, newEvents);
     }),
   );
