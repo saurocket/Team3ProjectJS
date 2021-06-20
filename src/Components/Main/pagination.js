@@ -1,9 +1,10 @@
 import { FinallyCard } from './FinallyCard';
+import { getAllCountPages } from '../../Store/selectors/getAllCountPages';
 
-export const notesOnPage = 2;
+export const notesOnPage = 20;
 
 export const Pagination = (root, actualEvents) => {
-  const numberOfEvent = actualEvents.length;
+  const numberOfEvent = getAllCountPages();
   const pages = new Array(Math.ceil(numberOfEvent / notesOnPage)).fill('');
   const pagesElement = pages.map((item, index) => {
       return `<li class="page-item ${index === 0 && 'active'}"><a class="page-link" href="#">${
@@ -39,3 +40,7 @@ export const Pagination = (root, actualEvents) => {
     }),
   );
 };
+
+`<< [1234]...[5678] >>`
+
+
