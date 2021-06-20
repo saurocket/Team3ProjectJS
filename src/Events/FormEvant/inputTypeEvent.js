@@ -1,4 +1,5 @@
-import { onInputEventActionCreator } from '../../Store/formReducer';
+import {onInputEventActionCreator } from '../../Store/formReducer';
+import { getEvents } from '../../Store/eventsReducer';
 
 
 export const inputTypeEvent = (state,dispatch,subscribe) => {
@@ -7,7 +8,8 @@ export const inputTypeEvent = (state,dispatch,subscribe) => {
 
   inputTitleRef.addEventListener('input', (e) => {
       dispatch(onInputEventActionCreator(e.currentTarget.value))
-    inputTitleRef.value = state().mainForm.inputTitle
+      inputTitleRef.value = state().mainForm.inputTitle
+      dispatch(getEvents())
 
 
   })

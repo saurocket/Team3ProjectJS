@@ -1,18 +1,23 @@
-import { Card } from './card';
 
+import { ErrorMessage } from './ErrorMessage';
+import { PreloaderCard } from './PreloaderCards';
+import { FinallyCard } from './FinallyCard';
+import { Pagination } from './pagination';
 
-export const Main = (root) => {
-  const arr = new Array(20).fill('').map(item => Card()).join('')
-  const elements =`<main>
-        <div class="container">
-            <ul class="event-list">
-                ${arr}
-            </ul>
-        </div>
-    </main>`;
+export const Main = (root, state) => {
+  const{isFound, actualEvents} = state
 
+  if(isFound === false){
+    ErrorMessage()
+    return;
+  }
+  if(actualEvents === null){
+    PreloaderCard(root)
+    return;
+  }
 
-  root.insertAdjacentHTML('beforeend', elements);
-
+  FinallyCard(root, actualEvents)
+  Pagination(root, actualEvents);
+  return;
 
 };

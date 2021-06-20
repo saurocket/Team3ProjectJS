@@ -9,6 +9,11 @@ export const Modal = (root, modalFlag) => {
   const elements =`
     <div class="backdrop" data-modal>
       <div class="modal-container">
+        <button type="button" class="btn-close btn-modal-close" data-modal-close>
+          <svg class="btn-close-icon">
+            <use href="${closePic}#icon-close"></use>
+          </svg>
+        </button>
         <div class="icon-block">
           <img src="${srcImg}" alt="${alt}" class="event-icon" />
         </div>
@@ -16,12 +21,7 @@ export const Modal = (root, modalFlag) => {
           <div class="modal-photo-block">
             <img src="${mainPic}" alt="main picture" class="modal-photo" />
           </div>
-          <div class="modal-main-info">
-            <button type="button" class="btn-close" data-modal-close>
-              <svg class="btn-close-icon">
-                <use href="${closePic}#icon-close"></use>
-              </svg>
-            </button>
+          <div class="modal-main-info">            
             <h2 class="modal-title">Info</h2>
             <p class="modal-text">
               Atlas Weekend is the largest music festival in Ukraine. More than 200 artists will
@@ -75,14 +75,22 @@ export const Modal = (root, modalFlag) => {
             >MORE FROM THIS AUTHOR</a
           >
         </div>
+        <div class="modal-arrow_block">
+          <button class="prev-next-btn" id="p">«</button>
+          <button class="prev-next-btn" id="n">»</button>
+        </div>
       </div>
     </div>
     `;
 
   root.insertAdjacentHTML('afterbegin', elements);
+  
 
 
 };
+// import modalOpen from '../Modal/modal-functional';
+
+
 
 
 // (() => {
@@ -100,3 +108,5 @@ export const Modal = (root, modalFlag) => {
 //         refs.modal.classList.toggle('is-hidden');
 //       }
 //     })();
+
+

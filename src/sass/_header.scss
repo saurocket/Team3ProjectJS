@@ -61,6 +61,7 @@ header {
   list-style: none;
   display: inline-block;
   padding: 0;
+  align-items: baseline;
   & li{
     width: 270px;
     height: 40px;
@@ -84,12 +85,10 @@ header {
   font-size: 16px;
   line-height: 1,21;
   background: rgba(255, 255, 255, 0.2);
-  width: 270px;
+  width: 240px;
   height: 40px;
   border-radius: 20px;
-  &::placeholder{
-    padding-left: 30px;
-  }
+  padding-left: 30px;
 }
 }
 .header-start{
@@ -105,3 +104,4 @@ header {
     display: inline-block;
 }
 }
+

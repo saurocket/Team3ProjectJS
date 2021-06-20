@@ -1,3 +1,19 @@
+// @font-face {
+//   font-family: AstoriaDeco;
+//   src: url('../fonts/AstoriaDeco.ttf');
+// }
+
+* {
+  list-style: none;
+}
+body.modalFooter-open {
+  overflow: hidden;
+}
+@mixin flexible() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 footer {
   display: flex;
   align-items: center;
@@ -6,8 +22,7 @@ footer {
   width: 100%;
   height: 100px;
 
-  background-color: #666666;
-
+  color: #939393;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -17,44 +32,198 @@ footer {
   p {
     margin-left: 25px;
     margin-right: 25px;
+    .heart {
+      display: inline-block;
+      height: 15px;
+    }
     a {
       font-style: normal;
-      color: black;
       color: #ff0000;
       text-decoration: none;
       &:active {
         color: #ff0000;
       }
       &:visited {
-        color: #0c003fd0;
+        color: #7abfffd0;
       }
       &:hover {
         color: #339900;
       }
     }
   }
+
   .footerModal {
     position: fixed;
     top: 0;
     left: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    @include flexible();
+    flex-direction: column;
+
     width: 100%;
-    background-color: rgba(56, 54, 54, 0.94);
+    height: 100%;
+    //----------------------------------
+    background-color: #0e0e0e;
+    background-position: no-repeat;
+    background-size: contain;
+
+    @media screen and (ma-width: 767px) {
+      background-position: left 0 top 364px;
+      background-image: url('../images/bg-main/noise-body-mobile.png');
+
+      @media screen and (main-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        .body {
+          background-image: url('../images/bg-main/noise-body-mobile@2x.png');
+        }
+      }
+    }
+
+    @media screen and (main-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      .body {
+        background-image: url('../images/bg-main/noise-body-tablet@2x.png');
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
+      background-position: center, center;
+      background-size: cover, 1280px;
+      background-image: url('../images/bg-main/noise-body-descktop.png'),
+        url('../images/bg-main/background-decor-1280.svg');
+
+      @media screen and (main-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        .body {
+          background-image: url('../images/bg-main/noise-body-descktop@2x.png');
+        }
+      }
+    }
+
+    // background-image: url('../images/bg-main/');
+    // background-color: rgb(24, 24, 24);
+    // background-position: center;
+    // background-size: cover;
+    //----------------------------------
+
     font-style: normal;
 
     transition: 1250ms cubic-bezier(0.4, 0, 0.01, 1);
+
+    .footerHeadline {
+      display: inline;
+      color: #fff;
+      margin: 0;
+      margin-bottom: 2vmin;
+      // font-family: AstoriaDeco;
+      // font-style: italic;
+
+      color: #939393;
+
+      font-weight: 100;
+      font-size: 4vmin;
+      line-height: 30px;
+    }
+
+    .tList {
+      @include flexible();
+
+      flex-wrap: wrap;
+      margin: 0;
+      padding-left: 0;
+      width: 90%;
+
+      .tCard {
+        position: relative;
+
+        margin: 1.4vmin;
+
+        width: 20vmin;
+        height: 20vmin;
+
+        perspective: 1000px;
+
+        &:hover .cardFront {
+          transform: rotateY(180deg);
+        }
+        &:hover .cardRear {
+          transform: rotateY(360deg);
+        }
+        .cardFront,
+        .cardRear {
+          position: absolute;
+          left: 0;
+          top: 0;
+
+          width: 100%;
+          height: 100%;
+
+          transition: 500ms cubic-bezier(0.4, 0, 0.01, 1);
+          backface-visibility: hidden;
+          overflow: hidden;
+        }
+
+        .cardFront {
+          border-top-left-radius: 3vmin;
+          border-bottom-right-radius: 3vmin;
+          object-fit: cover;
+
+          background-color: #fff;
+        }
+        .cardRear {
+          @include flexible();
+          justify-content: space-evenly;
+
+          border-top-right-radius: 3vmin;
+          border-bottom-left-radius: 3vmin;
+
+          flex-direction: column;
+          object-fit: cover;
+
+          line-height: 2.4vmin;
+          color: black;
+
+          background-color: #bdbdbd;
+          transform: rotateY(180deg);
+          p {
+            @include flexible();
+
+            margin: 0;
+            font-size: 2.4vmin;
+
+            &:nth-child(1) {
+              font-size: 2.4vmin;
+              font-weight: bold;
+            }
+          }
+          a {
+            @include flexible();
+
+            margin: 0;
+            padding: 0;
+          }
+          .logoGit {
+            display: block;
+            width: 4.4vmin;
+          }
+        }
+      }
+    }
   }
   .is-hidden {
+    visibility: hidden;
+    position: fixed;
+    top: 200%;
+
     height: 0%;
 
-    position: fixed;
-    top: 100%;
-    left: 0%;
-
     background-color: transparent;
+    .tCard {
+      list-style: none;
+      height: 0px;
+    }
   }
 }
