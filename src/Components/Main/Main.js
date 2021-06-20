@@ -2,10 +2,11 @@
 import { ErrorMessage } from './ErrorMessage';
 import { PreloaderCard } from './PreloaderCards';
 import { FinallyCard } from './FinallyCard';
+import { Pagination } from './pagination';
 
 export const Main = (root, state) => {
   const{isFound, actualEvents} = state
-
+  
   if(isFound === false){
     ErrorMessage()
     return;
@@ -14,7 +15,9 @@ export const Main = (root, state) => {
     PreloaderCard(root)
     return;
   }
-  FinallyCard(root,actualEvents)
+  
+  FinallyCard(root, actualEvents)
+  Pagination(root, actualEvents);
   return;
-
+  
 };
