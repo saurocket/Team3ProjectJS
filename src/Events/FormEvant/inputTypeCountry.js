@@ -1,5 +1,6 @@
 import { onInputCountry } from '../../Store/formReducer';
 import { getCountryData } from '../../Store/selectors/getCountryData';
+import { filtredCountryData } from '../../Store/selectors/filtredCountryData';
 
 
 export const inputTypeCountry = (state,dispatch) => {
@@ -13,9 +14,8 @@ export const inputTypeCountry = (state,dispatch) => {
 
 
     if(getCountryData().length > state().mainForm.filtredCountryData.length && state().mainForm.filtredCountryData.length !==0){
-      console.log('тут пишешь логику для открытия фильтра')
-
-    }
-
+      const country = state().mainForm.filtredCountryData;
+      console.log(country)
+    } 
   })
 }
