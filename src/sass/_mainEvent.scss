@@ -1,8 +1,8 @@
-@import 'styleDefoult/mixin';
-main {
-  .container {
-    @include container();
-  }
+@import "styleDefoult/mixin";
+@import "errorFound";
+main{
+  .container{
+    @include container()
 }
 // .event-list{
 //   display: grid;
@@ -32,7 +32,7 @@ main {
   background-position: no-repeat;
   background-size: contain;
 
-  @media screen and (ma-width: 767px) {
+  @media screen and (max-width: 767px) {
     background-position: left 0 top 364px;
     background-image: url('../images/bg-main/noise-body-mobile.png');
 
@@ -158,6 +158,7 @@ img {
   position: relative;
   border-radius: 50px 0px;
 }
+
 .before-img {
   position: absolute;
 }

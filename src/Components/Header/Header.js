@@ -2,7 +2,7 @@ import logMob from "../../images/header-img/logo-mobile.png"
 import logTab from "../../images/header-img/logo-tablet.png"
 import logDesc from "../../images/header-img/logo-dekstop.png"
 import logIcon from "../../images/header-img/symbol-defs.svg"
-
+import { valueInput } from "./value"
 
 export const Header = (root) => {
   const elements =`<header>
@@ -20,7 +20,10 @@ export const Header = (root) => {
       <ul class="header-input">
       <li class="header-start"><input id="title" type="text" name="text" placeholder="Start searching">
       <svg width="12px" height="12px"><use href="${logIcon}#icon-vector"></use></svg></li>
-      <li class="header-country"><input id="text" type="text" name="text" placeholder="Choose country">
+      <li class="header-country">
+      <select class="select" id="country" >
+      <option value="Choose country">Choose country</option> "${valueInput}"
+      </select>
       <svg width="12px" height="12px"><use href="${logIcon}#icon-polygon"></use></svg></li>
       </ul>
       </div>
