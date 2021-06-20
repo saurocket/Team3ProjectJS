@@ -21,9 +21,10 @@ export const Header = (root) => {
       <li class="header-start"><input id="title" type="text" name="text" placeholder="Start searching">
       <svg width="12px" height="12px"><use href="${logIcon}#icon-vector"></use></svg></li>
       <li class="header-country">
-      <select class="select" id="country" >
-      <option value="Choose country">Choose country</option> "${valueInput}"
-      </select>
+      <li class="header-start"><input id="country" type="text" name="text" placeholder="search">
+      <svg width="12px" height="12px"><use href="${logIcon}#icon-vector"></use></svg></li>
+      <li class="header-country">
+
       <svg width="12px" height="12px"><use href="${logIcon}#icon-polygon"></use></svg></li>
       </ul>
       </div>
@@ -34,3 +35,7 @@ export const Header = (root) => {
 
 
 };
+
+// <select class="select" id="country">
+//   <option value="Choose country">Choose country</option> "${valueInput}"
+// </select>
