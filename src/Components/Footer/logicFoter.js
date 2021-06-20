@@ -7,24 +7,29 @@ export default function logicFoter() {
     body: document.querySelector('body'),
   };
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.modal.addEventListener('click', e => {
-    if (e.target.className === 'footerModal' || e.target.className === 'tList') {
-      toggleModal(e);
-    }
-  });
-  refs.body.addEventListener('keydown', e => {
-    console.log(e);
-    if (e.key === 'Escape') {
-      refs.modal.classList.toggle('is-hidden');
-    }
-  });
+  refs.openModalBtn.addEventListener('click', openModal);
 
-  function toggleModal(event) {
-    event.preventDefault();
-    // document.body.classList.toggle('modal-open');
-    refs.body.classList.toggle('modalFooter-open');
+  function openModal(e) {
+    e.preventDefault();
+    toggleModal(e);
 
+    refs.body.addEventListener('keydown', closeModal);
+    refs.modal.addEventListener('click', closeModal);
+  }
+
+  function closeModal(e) {
+    if (
+      e.target.className === 'footerModal' ||
+      e.target.className === 'tList' ||
+      e.key === 'Escape'
+    ) {
+      toggleModal();
+      refs.body.removeEventListener('keydown', closeModal);
+      refs.modal.removeEventListener('click', closeModal);
+    }
+  }
+  function toggleModal() {
     refs.modal.classList.toggle('is-hidden');
+    refs.body.classList.toggle('modalFooter-open');
   }
 }

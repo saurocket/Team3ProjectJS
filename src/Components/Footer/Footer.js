@@ -1,5 +1,6 @@
 import logicFoter from './logicFoter';
 import logoGit from '../../images/footer/GitHub-Mark/PNG/GitHub-Mark-32px.png';
+
 export const Footer = root => {
   let team = '';
   let xhr = new XMLHttpRequest();
@@ -28,12 +29,13 @@ export const Footer = root => {
             }
           })
           .join('');
-        console.log(JSON.parse(xhr.responseText));
+        // console.log(team);
+        console.log(JSON.parse(xhr.responseText).result);
         const elements = `<footer><p>© 2021 | All Rights Reserved | Developed with <img class="heart" src=https://phoneky.co.uk/thumbs/screensavers/down/misc/heart-beat_bes6xpl1.gif> by&nbsp; <a class="footerModalOpen" href=""> GoIT Students</a></p><div class="is-hidden footerModal"><h3 class="footerHeadline">Над проектом работали:</h3><ul class="tList">${team}</ul></div></footer>`;
         root.insertAdjacentHTML('beforeend', elements);
         logicFoter();
       } catch (e) {
-        console.log(e);
+        console.log('Что-то пошло не так. Ошибка из кетча: ' + e);
       }
     }
   };
