@@ -1,10 +1,12 @@
 
 const CHANGE_INPUT_EVENTS = 'CHANGE_INPUT_EVENTS';
 const CHANGE_SELECT_COUNTRY = 'CHANGE_SELECT_COUNTRY'
+const CHANNGE_INPUT_COUNTRY = "CHANNGE_INPUT_COUNTRY"
 
 const initialState = {
   inputTitle: null,
   countryCode: null,
+  inputCountry: null,
   pageSize: 20,
   currentPage: 1,
   countryData: [
@@ -340,7 +342,8 @@ const initialState = {
       "countryCode":"VE",
       "name": "Venezuela"
     }
-  ]
+  ],
+  filtredCountryData:[]
 };
 
 
@@ -350,6 +353,12 @@ export const formReducer = (state = initialState, action) => {
       return { ...state, inputTitle: action.value};
     case CHANGE_SELECT_COUNTRY:{
       return {...state, countryCode: action.value}
+    }
+    case CHANNGE_INPUT_COUNTRY:{
+      const filterArr = state.countryData.filter(item=> item.name.includes(action.value))
+
+
+      return {...state,inputCountry:action.value, filtredCountryData: [...filterArr]}
     }
     default:
       return state;
@@ -369,3 +378,11 @@ export const onSelectEvent = (value) => {
     value
   }
 }
+
+export const onInputCountry = (value) => {
+  return {
+    type: CHANNGE_INPUT_COUNTRY,
+    value
+  }
+}
+
