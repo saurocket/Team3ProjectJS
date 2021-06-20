@@ -21,14 +21,9 @@ export const Header = (root) => {
       <li class="header-start"><input id="title" type="text" name="text" placeholder="Start searching">
       <svg width="12px" height="12px"><use href="${logIcon}#icon-vector"></use></svg></li>
       <li class="header-country">
-      <div class="select">
-      <div class="select-input">Choose country</div>
-      <div class="select-dropdown">
-      <ul class="select-list">
-      ${valueInput}
-      </ul>
-      </div>
-      </div>
+      <select class="select" id="country" >
+      <option value="Choose country">Choose country</option> "${valueInput}"
+      </select>
       <svg width="12px" height="12px"><use href="${logIcon}#icon-polygon"></use></svg></li>
       </ul>
       </div>
