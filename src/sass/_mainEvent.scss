@@ -1,9 +1,9 @@
-@import "styleDefoult/mixin";
-@import "errorFound";
+@import 'styleDefoult/mixin';
+@import 'errorFound';
 
 main {
   .container {
-    @include container()
+    @include container();
   }
 }
 
@@ -39,8 +39,8 @@ main {
     background-image: url('../images/bg-main/noise-body-mobile.png');
 
     @media screen and (main-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
       .body {
         background-image: url('../images/bg-main/noise-body-mobile@2x.png');
       }
@@ -48,8 +48,8 @@ main {
   }
 
   @media screen and (main-device-pixel-ratio: 2),
-  screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
     .body {
       background-image: url('../images/bg-main/noise-body-tablet@2x.png');
     }
@@ -59,11 +59,11 @@ main {
     background-position: center, center;
     background-size: cover, 1280px;
     background-image: url('../images/bg-main/noise-body-descktop.png'),
-    url('../images/bg-main/background-decor-1280.svg');
+      url('../images/bg-main/background-decor-1280.svg');
 
     @media screen and (main-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
       .body {
         background-image: url('../images/bg-main/noise-body-descktop@2x.png');
       }
@@ -77,15 +77,16 @@ img {
   height: auto;
 }
 
-
 .event-list {
+  padding: 0px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: space-between;
   margin-bottom: 80px;
 }
 
 .event-card {
+  //
   position: relative;
   text-align: center;
   margin-bottom: 30px;
@@ -93,17 +94,20 @@ img {
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
     margin-top: 39px;
+    height: 280px;
     flex-basis: calc(100% / 2 - 14px);
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     margin-top: 58px;
+    height: 370px;
     flex-basis: calc(100% / 3 - 27px);
   }
 
   @media screen and (min-width: 1280px) {
     margin-top: 63px;
     flex-basis: calc(100% / 4 - 70px);
+    height: 370px;
   }
 }
 
@@ -197,7 +201,7 @@ img {
   line-height: 17px;
   font-size: 14px;
   margin-bottom: 5px;
-  color: #DC56C5;
+  color: #dc56c5;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -231,4 +235,3 @@ img {
 .event-location {
   color: white;
 }
-
