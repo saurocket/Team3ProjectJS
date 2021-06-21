@@ -24,7 +24,7 @@ store.subscribe(()=> {
   if (state.events.isFetching == 2){
     Main(root, state.events)
   }
-
+  Modal(root, state.mainForm.modal)
 
 
 })

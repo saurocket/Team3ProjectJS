@@ -6,8 +6,10 @@ const GET_PAGE_INFORM_API = 'GET_PAGE_INFORM_API'
 const IS_FETCHING = 'IS_FETCHING'
 const RESET_REQUEST = 'RESET_REQUEST'
 const FOUND_EVENTS = 'FINDE_EVENTS'
+const SET_MODAL_INFORMATION = 'SET_MODAL_INFORMATION'
 
 const initialState = {
+  modalInformation: null,
   actualEvents: null,
   pageInformation: null,
   isFound: null,
@@ -29,6 +31,9 @@ export const eventsReducer = (state = initialState, action) => {
     }
     case FOUND_EVENTS: {
       return {...state, isFound: action.isFound}
+    }
+    case SET_MODAL_INFORMATION: {
+      return {...state, modalInformation: {...action.payload}}
     }
     default: return state
   }
@@ -53,6 +58,11 @@ const resetRequest = () => {
 const isFoundEvents = (isFound) => {
   return {
     type: FOUND_EVENTS, isFound
+  }
+}
+export const setModalInformation = (payload) => {
+  return {
+    type: SET_MODAL_INFORMATION, payload
   }
 }
 
