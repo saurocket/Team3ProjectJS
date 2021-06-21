@@ -3,6 +3,7 @@ import logTab from "../../images/header-img/logo-tablet.png"
 import logDesc from "../../images/header-img/logo-dekstop.png"
 import logIcon from "../../images/header-img/symbol-defs.svg"
 import { valueInput } from "./value"
+import { SelectList } from './Select';
 
 export const Header = (root) => {
   const elements =`<header>
@@ -20,12 +21,14 @@ export const Header = (root) => {
       <ul class="header-input">
       <li class="header-start"><input id="title" type="text" name="text" placeholder="Start searching">
       <svg width="12px" height="12px"><use href="${logIcon}#icon-vector"></use></svg></li>
-  
+
       <li class="header-country">
       <input id="country" type="text" name="text" placeholder="Choose country">
-    
-      <svg width="12px" height="12px"><use href="${logIcon}#icon-polygon"></use></svg></li>
+      <svg width="12px" height="12px"><use href="${logIcon}#icon-polygon"></use></svg>
+       ${SelectList(root)}
+       </li>
       </ul>
+
       </div>
     </header>`;
 
