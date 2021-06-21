@@ -1,7 +1,8 @@
+import Pagination from 'tui-pagination';
 import { FinallyCard } from './FinallyCard';
 import { getAllCountPages } from '../../Store/selectors/getAllCountPages';
-
-export const notesOnPage = 20;
+import { api } from '../../API/api'
+/* export const notesOnPage = 20;
 
 export const Pagination = (root, actualEvents) => {
   const numberOfEvent = getAllCountPages();
@@ -24,23 +25,54 @@ export const Pagination = (root, actualEvents) => {
     root.insertAdjacentHTML('beforeend', elements);
   let newEvents = actualEvents.slice(0, notesOnPage);
   FinallyCard(root, newEvents);
-  let pagesRef = document.querySelectorAll('.page-item');
-
-  pagesRef.forEach(item =>
-    item.addEventListener('click', e => {
-      const target = e.target;
-      if (!target.classList.contains === 'page-item') return;
-      pagesRef.forEach(page => page.classList.remove('active'));
-      item.classList.add('active');
-      const value = parseInt(item.textContent);
-      const start = (value - 1) * notesOnPage;
-      const end = start + notesOnPage;
-      newEvents = actualEvents.slice(start, end);
-      FinallyCard(root, newEvents);
-    }),
-  );
+  
 };
 
-`<< [1234]...[5678] >>`
+`<< [1234]...[5678] >>` */
+export const startPagination = (root) => {
+  
 
+  const elements = `
+       <div id="pagination" class="tui-pagination"></div>`
+  root.insertAdjacentHTML('beforeend', elements);
+  const options = {
+    totalItems: getAllCountPages(),
+    itemsPerPage: 20,
+    visiblePages: 5,
+    page: 1,
+    centerAlign: false,
+    firstItemClassName: 'tui-first-child',
+    lastItemClassName: 'tui-last-child',
+    template: {
+      page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+      currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+      moveButton:
+        '<a href="#" class="tui-page-btn tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '</a>',
+      disabledMoveButton:
+        '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '</span>',
+      moreButton:
+        '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+        '<span class="tui-ico-ellip">...</span>' +
+        '</a>',
+    },
+  };
+
+  const pagination = new Pagination('pagination', options);
+  /* pagination.on('beforeMove', evt => {
+    const { page } = evt;
+    const result = api.xhr.send({ page });
+
+    if (result) {
+      pagination.movePageTo(page);
+    } else {
+      return false;
+    }
+  }); */
+
+  pagination.on('afterMove', ({ page }) => console.log(page));
+}
 
