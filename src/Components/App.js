@@ -23,7 +23,6 @@ store.subscribe(()=> {
 
   if (state.events.isFetching == 2){
     Main(root, state.events)
-    console.log('render')
   }
 
 

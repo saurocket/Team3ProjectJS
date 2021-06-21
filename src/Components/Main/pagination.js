@@ -5,8 +5,6 @@ import store from '../../Store/store';
 import { getEvents } from '../../Store/eventsReducer';
 import { getCurrentPage } from '../../Store/selectors/getCurrentPage';
 export const startPagination = (root, currentPage, totalPages) => {
-
-  console.log('total pages --- ' + totalPages)
   if (totalPages<=12){
     return
   }

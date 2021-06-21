@@ -30,7 +30,7 @@ export const Footer = root => {
           })
           .join('');
         // console.log(team);
-        console.log(JSON.parse(xhr.responseText).result);
+
         const elements = `<footer><p>© 2021 | All Rights Reserved | Developed with <img class="heart" src=https://phoneky.co.uk/thumbs/screensavers/down/misc/heart-beat_bes6xpl1.gif> by&nbsp; <a class="footerModalOpen" href=""> GoIT Students</a></p><div class="is-hidden footerModal"><h3 class="footerHeadline">Над проектом работали:</h3><ul class="tList">${team}</ul></div></footer>`;
         root.insertAdjacentHTML('beforeend', elements);
         logicFoter();
