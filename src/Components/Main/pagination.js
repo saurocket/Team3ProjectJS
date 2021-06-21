@@ -1,45 +1,29 @@
 import Pagination from 'tui-pagination';
-import { FinallyCard } from './FinallyCard';
 import { getAllCountPages } from '../../Store/selectors/getAllCountPages';
-import { api } from '../../API/api'
-/* export const notesOnPage = 20;
+import { onPageChanged } from '../../Store/formReducer';
+import store from '../../Store/store';
+import { getEvents } from '../../Store/eventsReducer';
+import { getCurrentPage } from '../../Store/selectors/getCurrentPage';
+export const startPagination = (root, currentPage, totalPages) => {
 
-export const Pagination = (root, actualEvents) => {
-  const numberOfEvent = getAllCountPages();
-  const pages = new Array(Math.ceil(numberOfEvent / notesOnPage)).fill('');
-  const pagesElement = pages.map((item, index) => {
-      return `<li class="page-item ${index === 0 && 'active'}"><a class="page-link" href="#">${
-        index + 1
-      }</a></li>`;
-    })
-        .join('');
-
-  const elements = `
-        <div class="pag-container">
-            <ul class="pag" id="pagination">
-            <li class="arrow laquo"><a href="#">&laquo;</a></li>
-            ${pagesElement}
-            <li class="arrow raquo"><a href="#">&raquo;</a></li>
-            </ul>
-        </div>`;
-    root.insertAdjacentHTML('beforeend', elements);
-  let newEvents = actualEvents.slice(0, notesOnPage);
-  FinallyCard(root, newEvents);
-  
-};
-
-`<< [1234]...[5678] >>` */
-export const startPagination = (root) => {
-  
+  console.log('total pages --- ' + totalPages)
+  if (totalPages<=12){
+    return
+  }
+  const paginationRef = document.querySelector('#pagination');
+  if(paginationRef){
+    paginationRef.style.display = 'block'
+    return;
+  }
 
   const elements = `
        <div id="pagination" class="tui-pagination"></div>`
   root.insertAdjacentHTML('beforeend', elements);
   const options = {
-    totalItems: getAllCountPages(),
+    totalItems: totalPages,
     itemsPerPage: 20,
     visiblePages: 5,
-    page: 1,
+    page: currentPage,
     centerAlign: false,
     firstItemClassName: 'tui-first-child',
     lastItemClassName: 'tui-last-child',
@@ -62,17 +46,10 @@ export const startPagination = (root) => {
   };
 
   const pagination = new Pagination('pagination', options);
-  /* pagination.on('beforeMove', evt => {
-    const { page } = evt;
-    const result = api.xhr.send({ page });
 
-    if (result) {
-      pagination.movePageTo(page);
-    } else {
-      return false;
-    }
-  }); */
-
-  pagination.on('afterMove', ({ page }) => console.log(page));
+  pagination.on('afterMove', ({ page }) => {
+    store.dispatch(onPageChanged(page))
+    store.dispatch(getEvents())
+  });
 }
 

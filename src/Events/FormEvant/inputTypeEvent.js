@@ -1,4 +1,4 @@
-import {onInputEventActionCreator } from '../../Store/formReducer';
+import { onInputEventActionCreator, onPageChanged } from '../../Store/formReducer';
 import { getEvents } from '../../Store/eventsReducer';
 
 
@@ -8,6 +8,7 @@ export const inputTypeEvent = (state,dispatch,subscribe) => {
 
   inputTitleRef.addEventListener('input', (e) => {
       dispatch(onInputEventActionCreator(e.currentTarget.value))
+      dispatch(onPageChanged(1))
       inputTitleRef.value = state().mainForm.inputTitle
       dispatch(getEvents())
 
