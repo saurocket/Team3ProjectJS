@@ -1,5 +1,9 @@
 
 export const ErrorMessage = () => {
+  const paginationRef = document.querySelector('#pagination');
+ if(paginationRef){
+   paginationRef.style.display = 'none'
+ }
   const eventListRef = document.querySelector('.event-list')
   if (!eventListRef){
     return;
