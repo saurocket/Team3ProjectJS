@@ -55,7 +55,7 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
-    
+
 }
 .header-input{
   list-style: none;
@@ -66,10 +66,10 @@ header {
     width: 270px;
     height: 40px;
   }
-  
-  
+
+
   & svg{
-    
+
     position: relative;
      bottom: 30px;
      left: 100px;
@@ -78,7 +78,7 @@ header {
     display: flex;
     justify-content: center;
   }
-  
+
 & input{
   color: #939393;
   font-weight: 400px;
@@ -100,8 +100,23 @@ header {
 }
 .header-container{
   @media screen and (min-width: 768px){
-    
+
     display: inline-block;
 }
+}
+.header-country{
+  position: relative;
+}
+
+#selectedList{
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  max-height: 400px;
+ li{
+   color: white;
+   cursor: pointer;
+ }
 }
 

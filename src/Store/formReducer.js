@@ -3,6 +3,7 @@ const CHANGE_INPUT_EVENTS = 'CHANGE_INPUT_EVENTS';
 const CHANGE_SELECT_COUNTRY = 'CHANGE_SELECT_COUNTRY'
 const CHANGE_INPUT_COUNTRY = "CHANNGE_INPUT_COUNTRY"
 const CHANGE_CURRENT_PAGE = "CHANGE_CURRENT_PAGE"
+const CHANGE_COUNTRY_CODE = 'CHANGE_COUNTRY_CODE'
 
 const initialState = {
   inputTitle: null,
@@ -362,6 +363,9 @@ export const formReducer = (state = initialState, action) => {
     case CHANGE_CURRENT_PAGE: {
       return {...state, currentPage: action.value}
     }
+    case CHANGE_COUNTRY_CODE: {
+      return {...state, countryCode: action.value}
+    }
     default:
       return state;
   }
@@ -393,4 +397,8 @@ export const onPageChanged = (value) => {
     value
   }
 }
-
+export const onChangeCountryCode = value => {
+  return {
+    type: CHANGE_COUNTRY_CODE,value
+  }
+}
