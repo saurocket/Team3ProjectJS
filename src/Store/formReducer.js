@@ -4,8 +4,10 @@ const CHANGE_SELECT_COUNTRY = 'CHANGE_SELECT_COUNTRY'
 const CHANGE_INPUT_COUNTRY = "CHANNGE_INPUT_COUNTRY"
 const CHANGE_CURRENT_PAGE = "CHANGE_CURRENT_PAGE"
 const CHANGE_COUNTRY_CODE = 'CHANGE_COUNTRY_CODE'
+const MODAL_STATUS = 'MODAL_STATUS'
 
 const initialState = {
+  modal: false,
   inputTitle: null,
   countryCode: null,
   inputCountry: null,
@@ -366,6 +368,9 @@ export const formReducer = (state = initialState, action) => {
     case CHANGE_COUNTRY_CODE: {
       return {...state, countryCode: action.value}
     }
+    case MODAL_STATUS: {
+      return {...state, modal: action.value}
+    }
     default:
       return state;
   }
@@ -400,5 +405,10 @@ export const onPageChanged = (value) => {
 export const onChangeCountryCode = value => {
   return {
     type: CHANGE_COUNTRY_CODE,value
+  }
+}
+export const onModalChange = value => {
+  return {
+    type: MODAL_STATUS, value
   }
 }

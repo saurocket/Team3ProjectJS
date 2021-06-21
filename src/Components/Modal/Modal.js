@@ -1,10 +1,26 @@
 import codePic from '../../images/modal/ticket1.svg';
 import closePic from '../../images/modal/symbol-defs.svg';
 import mainPic from '../../images/modal/pic.png';
+import { modalEvent } from './modal-functional';
+import store from '../../Store/store';
 
 export const Modal = (root, modalFlag) => {
-  if (!modalFlag) return;
-  let srcImg = 'https://abnews.ru/wp-content/uploads/2016/04/black-eyed-peas.jpg';  
+  if (!modalFlag){
+    const backdropeRef = document.querySelectorAll('.backdrop')
+    if (backdropeRef[0]){
+      backdropeRef.forEach(item => item.remove())
+      return
+    }
+  return;
+  }
+
+  const state = store.getState().events.modalInformation
+
+  console.log(state)
+
+
+
+  let srcImg = 'https://abnews.ru/wp-content/uploads/2016/04/black-eyed-peas.jpg';
   let alt = 'alt text';
   const elements =`
     <div class="backdrop" data-modal>
@@ -15,24 +31,23 @@ export const Modal = (root, modalFlag) => {
           </svg>
         </button>
         <div class="icon-block">
-          <img src="${srcImg}" alt="${alt}" class="event-icon" />
+          <img src="${state.images[4].url}" alt="${alt}" class="event-icon" />
         </div>
         <div class="modal-body">
           <div class="modal-photo-block">
-            <img src="${mainPic}" alt="main picture" class="modal-photo" />
+            <img src="${state.images[8].url}" alt="main picture" class="modal-photo" />
           </div>
-          <div class="modal-main-info">            
+          <div class="modal-main-info">
             <h2 class="modal-title">Info</h2>
             <p class="modal-text">
-              Atlas Weekend is the largest music festival in Ukraine. More than 200 artists will
-              create a proper music festival atmosphere on 10 stages
+              ${state.name}
             </p>
             <h2 class="modal-title">When</h2>
             <p class="modal-text">
-              <time>2021-06-09</time>
+              <time>${state.dates.start.localDate}</time>
               <br />
-              <time>20:00</time>
-              <span>(Kyiv/Ukraine)</span>
+              <time>${state.dates.start.localTime}</time>
+              <span>(${state.dates.timezone})</span>
             </p>
             <h2 class="modal-title">Where</h2>
             <p class="modal-text">
@@ -84,7 +99,10 @@ export const Modal = (root, modalFlag) => {
     `;
 
   root.insertAdjacentHTML('afterbegin', elements);
-  
+
+
+  modalEvent()
+
 
 
 };
