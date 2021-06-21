@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "redux": "^4.1.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "tui-pagination": "^3.4.1"
   }
 }

@@ -2,7 +2,7 @@
 import { ErrorMessage } from './ErrorMessage';
 import { PreloaderCard } from './PreloaderCards';
 import { FinallyCard } from './FinallyCard';
-import { Pagination } from './pagination';
+import { startPagination } from './pagination';
 
 export const Main = (root, state) => {
   const{isFound, actualEvents} = state
@@ -17,7 +17,7 @@ export const Main = (root, state) => {
   }
 
   FinallyCard(root, actualEvents)
-  Pagination(root, actualEvents);
+  startPagination(root)
   return;
 
 };
