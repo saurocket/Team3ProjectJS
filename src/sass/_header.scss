@@ -1,122 +1,135 @@
-@import "./styleDefoult/mixin";
+@import './styleDefoult/mixin';
 header {
-  @media screen and (min-width: 320px){
+  @media screen and (min-width: 320px) {
     height: 364px;
     background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
-    url(../images/bg-320.jpg);
+      url(../images/bg-320.jpg);
     @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-      background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
-      url(../images/bg-320@2x.jpg);
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          180deg,
+          rgba(13, 13, 13, 0.19) 0%,
+          rgba(14, 14, 14, 0.8) 100%
+        ),
+        url(../images/bg-320@2x.jpg);
     }
   }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
-    url(../images/bg-786.jpg);
+      url(../images/bg-786.jpg);
     @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-      background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
-      url(../images/bg-768@2x.jpg);
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          180deg,
+          rgba(13, 13, 13, 0.19) 0%,
+          rgba(14, 14, 14, 0.8) 100%
+        ),
+        url(../images/bg-768@2x.jpg);
     }
   }
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 1280px) {
     height: 446px;
     background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
-    url(../images/bg-1280.jpg);
+      url(../images/bg-1280.jpg);
     @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-      background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%),
-      url(../images/bg1280@2x.jpg);
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          180deg,
+          rgba(13, 13, 13, 0.19) 0%,
+          rgba(14, 14, 14, 0.8) 100%
+        ),
+        url(../images/bg1280@2x.jpg);
     }
   }
-  .header-img{
+  .header-img {
     position: absolute;
     left: 0;
   }
-  .header-name{
+  .header-name {
     @include container();
     padding-top: 78px;
-      color: #DC56C5;
-      font-weight: 900;
-      line-height: 1,21;
-      font-size: 21px;
-      @media screen and (min-width: 768px){
-        padding-top: 40px;
-        font-size: 30px; }
-        @media screen and (min-width: 1280px){
-          font-size: 50px;
-        }
-
+    color: #dc56c5;
+    font-weight: 900;
+    line-height: 1, 21;
+    font-size: 21px;
+    @media screen and (min-width: 768px) {
+      padding-top: 40px;
+      font-size: 30px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 50px;
+    }
   }
   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-align: center;
-
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
 }
-.header-input{
+.header-input {
   list-style: none;
   display: inline-block;
   padding: 0;
   align-items: baseline;
-  & li{
+  & li {
     width: 270px;
     height: 40px;
   }
 
-
-  & svg{
-
+  & svg {
     position: relative;
-     bottom: 30px;
-     left: 100px;
-   }
-  @media screen and (min-width: 768px){
+    bottom: 30px;
+    left: 100px;
+  }
+  @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
   }
 
-& input{
-  color: #939393;
-  font-weight: 400px;
-  font-size: 16px;
-  line-height: 1,21;
-  background: rgba(255, 255, 255, 0.2);
-  width: 240px;
-  height: 40px;
-  border-radius: 20px;
-  padding-left: 30px;
+  & input {
+    // color: #939393;
+    color: #fff;
+    font-weight: 400px;
+    font-size: 16px;
+    line-height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    width: 240px;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 30px;
+    outline: none;
+    &:hover,
+    &:focus {
+      box-shadow: 0px 0px 10px 8px #dc56c5;
+    }
+  }
 }
-}
-.header-start{
+.header-start {
   margin-bottom: 25px;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin-bottom: 0;
-  margin-right: 30px;
+    margin-right: 30px;
+  }
 }
-}
-.header-container{
-  @media screen and (min-width: 768px){
-
+.header-container {
+  @media screen and (min-width: 768px) {
     display: inline-block;
+  }
 }
-}
-.header-country{
+.header-country {
   position: relative;
 }
 
-#selectedList{
+#selectedList {
   position: absolute;
   top: 60px;
   right: 0;
   width: 100%;
   max-height: 400px;
- li{
-   color: white;
-   cursor: pointer;
- }
+  li {
+    color: white;
+    cursor: pointer;
+  }
 }
-
