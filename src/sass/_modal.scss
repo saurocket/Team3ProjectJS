@@ -68,6 +68,7 @@
   }
 }
 .modal-photo {
+  object-fit: cover;
   @media screen and (min-width: 768px) {
     width: 233px;
     height: 416px;
@@ -112,6 +113,7 @@
   }
 }
 .event-icon {
+  object-fit: cover;
   display: block;
   width: 100px;
   height: 100px;
