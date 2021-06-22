@@ -17,6 +17,7 @@ export const startPagination = (root, currentPage, totalPages) => {
   const elements = `
        <div id="pagination" class="tui-pagination"></div>`
   root.insertAdjacentHTML('beforeend', elements);
+  totalPages = totalPages < 980 ? totalPages : 980;
   const options = {
     totalItems: totalPages,
     itemsPerPage: 20,
