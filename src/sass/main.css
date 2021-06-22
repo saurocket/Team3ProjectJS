@@ -510,6 +510,23 @@ header .header-name {
   }
 }
 
+.header-country {
+  position: relative;
+}
+
+#selectedList {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  max-height: 400px;
+}
+
+#selectedList li {
+  color: white;
+  cursor: pointer;
+}
+
 button:hover,
 .discription-btn:hover,
 .discription-btn:hover,
@@ -1140,6 +1157,11 @@ button:hover,
   }
 }
 
+.modal-photo {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media screen and (min-width: 768px) {
   .modal-photo {
     width: 233px;
@@ -1202,6 +1224,8 @@ button:hover,
 }
 
 .event-icon {
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   width: 100px;
   height: 100px;
