@@ -6,7 +6,7 @@
   "homepage": "https://saurocket.github.io/Team3ProjectJS",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /Team3ProjectJS/"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
     "posthtml-include": "^1.6.2",
-    "sass": "^1.32.8"
+    "sass": "^1.32.n8"
   },
   "dependencies": {
     "redux": "^4.1.0",
