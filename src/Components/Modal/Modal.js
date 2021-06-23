@@ -31,11 +31,11 @@ export const Modal = (root, modalFlag) => {
           </svg>
         </button>
         <div class="icon-block">
-          <img src="${state.images[4].url}" alt="${alt}" class="event-icon" />
+          <img src="${state.images.find(i => i.width === 640).url}" alt="${alt}" class="event-icon" />
         </div>
         <div class="modal-body">
           <div class="modal-photo-block">
-            <img src="${state.images[8].url}" alt="main picture" class="modal-photo" />
+            <img src="${state.images.find(i => i.width > 2000).url}" alt="main picture" class="modal-photo" />
           </div>
           <div class="modal-main-info">
             <h2 class="modal-title">Who</h2>
@@ -48,10 +48,17 @@ export const Modal = (root, modalFlag) => {
               <br />
               <time>${state.dates.start.localTime}</time>
             </p>
-            <h2 class="modal-title">Where</h2>
-            <p class="modal-text">
+            <h2 class="modal-title">Where</h2>`;
+  if (state.hasOwnProperty('info')) {
+    elements += `<p class="modal-text">
               ${state.dates.timezone}
-            </p>
+            </p>`
+  } else {
+    elements += `<p class="modal-text">
+              Please contact our manager for further info.
+            </p>`;
+  }
+  elements += `
             <h2 class="modal-title">Info</h2>`;
   if (state.hasOwnProperty('info')) {
     elements += `<p class="modal-text modal-text-info">
@@ -84,9 +91,11 @@ export const Modal = (root, modalFlag) => {
               </div>`
       return total
     }, '');
-    elements += `
+    if (state.dates.status.code === "onsale") {
+      elements += `
               <a href="" class="buy-ticked-link">BUY TICKETS</a>
             `;
+    }
   }
   else {
     elements += `<div class="price-text">
@@ -103,8 +112,8 @@ export const Modal = (root, modalFlag) => {
           >
         </div>
         <div class="modal-arrow_block">
-          <button class="prev-next-btn" id="p">«</button>
-          <button class="prev-next-btn" id="n">»</button>
+          <button class="prev-next-btn" style="display: none;" id="p">«</button>
+          <button class="prev-next-btn" style="display: none;" id="n">»</button>
         </div>
       </div>
     </div>
