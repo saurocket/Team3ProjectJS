@@ -1,6 +1,5 @@
 import codePic from '../../images/modal/ticket1.svg';
 import closePic from '../../images/modal/symbol-defs.svg';
-import mainPic from '../../images/modal/pic.png';
 import { modalEvent } from './modal-functional';
 import store from '../../Store/store';
 
@@ -16,7 +15,6 @@ export const Modal = (root, modalFlag) => {
 
   const state = store.getState().events.modalInformation
 
-  console.log(state)
 
 
 

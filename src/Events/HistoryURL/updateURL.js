@@ -7,7 +7,7 @@ export const updateURL = (state) => {
 
 
     setLocation(`?keyword=${state.mainForm.inputTitle}&countryCode=${state.mainForm.countryCode}&currentPage=${
-      state.mainForm.currentPage}&modal=${state.mainForm.modal}&id=${id}`)
+      state.mainForm.currentPage}&inputCountry=${state.mainForm.inputCountry}&modal=${state.mainForm.modal}&id=${id}`)
 
 
 

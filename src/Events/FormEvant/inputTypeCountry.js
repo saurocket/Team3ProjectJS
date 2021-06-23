@@ -20,7 +20,6 @@ export const inputTypeCountry = (state,dispatch) => {
     }
     if(getCountryData().length > getFiltredCountry().length && getFiltredCountry().length !==0){
       const country = state().mainForm.filtredCountryData;
-      console.log(country)
       const selectRef = document.querySelector('#selectedList')
       if(selectRef){
         selectRef.innerHTML = ''
