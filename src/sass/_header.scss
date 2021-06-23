@@ -50,16 +50,19 @@ header {
   }
   .header-name {
     @include container();
+    margin-bottom: 25px;
     padding-top: 78px;
     color: #dc56c5;
     font-weight: 900;
     line-height: 1, 21;
     font-size: 21px;
     @media screen and (min-width: 768px) {
+      margin-bottom: 27px;
       padding-top: 40px;
       font-size: 30px;
     }
     @media screen and (min-width: 1280px) {
+      margin-bottom: 52px;
       font-size: 50px;
     }
   }
@@ -98,6 +101,7 @@ header {
     width: 240px;
     height: 40px;
     border-radius: 20px;
+    border: 1px solid transparent;
     padding-left: 30px;
     outline: none;
     &:hover,
@@ -127,9 +131,20 @@ header {
   top: 60px;
   right: 0;
   width: 100%;
-  max-height: 400px;
+  max-height: 220px;
+  overflow: auto;
+  z-index: 1;
   li {
-    color: white;
     cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    outline: none;
+    margin-bottom: 5px;
+    &:hover {
+      color: #dc56c5;
+    }
   }
 }
