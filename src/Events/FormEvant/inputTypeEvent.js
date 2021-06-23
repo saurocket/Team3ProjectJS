@@ -5,11 +5,12 @@ import { getEvents } from '../../Store/eventsReducer';
 export const inputTypeEvent = (state,dispatch,subscribe) => {
   const inputTitleRef = document.querySelector('#title')
   const inputCountryRef = document.querySelector('#country')
-  inputTitleRef.value = state().mainForm.inputTitle
 
   inputTitleRef.addEventListener('input', (e) => {
-      if(inputCountryRef.textContent === '' || inputCountryRef.textContent === null){
+    console.log(inputCountryRef.value)
+      if(inputCountryRef.value === ''){
         dispatch(onChangeCountryCode(null))
+        inputCountryRef.value = ''
       }
       dispatch(onInputEventActionCreator(e.currentTarget.value))
       dispatch(onPageChanged(1))

@@ -10,7 +10,7 @@ export const FinallyCard = (root, state) => {
     return;
   }
   eventListRef.innerHTML = ''
-  const arr =  state.map(item => {
+  const arr =  state.map((item,index) => {
     const id = item.id
     const src = item.images[7].url
     const event = item.name
@@ -26,7 +26,7 @@ export const FinallyCard = (root, state) => {
     }catch (e) {
 
     }
-    return Card(src,event, date, place, id)
+    return Card(src,event, date, place, id, index)
   }).join('')
   eventListRef.insertAdjacentHTML('beforeend', arr)
 
