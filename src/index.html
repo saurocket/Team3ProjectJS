@@ -8,10 +8,28 @@
       rel="stylesheet"
       integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
       crossorigin="anonymous"
-    />
-  </head>
-  <body class="body">
+    /> 
+    </head>
+    <body class="body">
     <div id="root"></div>
-    <script src="./index.js"></script>
-  </body>
+    
+      <!-- Preloader -->
+      <div class="preloader">
+        <div class="preloader__row">
+          <div class="preloader__item"></div>
+          <div class="preloader__item"></div>
+        </div>
+      </div>
+      <script>
+        window.onload = function () {
+          document.body.classList.add('loaded_hiding');
+          window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+          }, 500);
+        }
+      </script>
+      
+      <script src="./index.js"></script>
+    </body>
 </html>
