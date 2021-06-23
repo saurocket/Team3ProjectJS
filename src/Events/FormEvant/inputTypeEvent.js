@@ -7,12 +7,11 @@ export const inputTypeEvent = (state,dispatch,subscribe) => {
   const inputCountryRef = document.querySelector('#country')
 
   inputTitleRef.addEventListener('input', (e) => {
-    console.log(inputCountryRef.value)
       if(inputCountryRef.value === ''){
         dispatch(onChangeCountryCode(null))
         inputCountryRef.value = ''
       }
-      dispatch(onInputEventActionCreator(e.currentTarget.value))
+      dispatch(onInputEventActionCreator((e.currentTarget.value).trim()))
       dispatch(onPageChanged(1))
       inputTitleRef.value = state().mainForm.inputTitle
       dispatch(getEvents())

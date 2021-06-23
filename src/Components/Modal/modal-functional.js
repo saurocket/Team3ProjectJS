@@ -1,5 +1,6 @@
 import store from '../../Store/store';
 import { onModalChange } from '../../Store/formReducer';
+import { setModalInformation } from '../../Store/eventsReducer';
 
 export const modalEvent = () => {
   const modalBackdrop = document.querySelector('.backdrop');
@@ -13,14 +14,10 @@ export const modalEvent = () => {
   btnModalClose.addEventListener('click', closeModal);
 
   function closeModal() {
-    console.log('ggggg')
-    // const isClosed = refs.modalBackdrop.classList.contains('is-hidden')
-    store.dispatch(onModalChange(false))
-    // if (isClosed) {
-    //   return
-    // }
 
-    // modalBackdrop.classList.add('is-hidden')
+    store.dispatch(onModalChange(false))
+    store.dispatch(setModalInformation(null))
+
 
   }
 

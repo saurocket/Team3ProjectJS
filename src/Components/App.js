@@ -5,7 +5,6 @@ import { Main } from './Main/Main';
 
 import { Footer } from './Footer/Footer';
 import store from '../Store/store';
-import { setLocation } from '../Events/HistoryURL/pushURL';
 import { updateURL } from '../Events/HistoryURL/updateURL';
 
 
@@ -22,7 +21,9 @@ export const App = () => {
 
 store.subscribe(()=> {
   const state = store.getState()
-  updateURL(state)
+  if (state.events.isInitialized){
+    updateURL(state)
+  }
 
 
   if(state.events.isFetching == 1){
