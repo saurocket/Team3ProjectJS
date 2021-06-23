@@ -84,4 +84,4 @@ module.exports="/Team3ProjectJS/GitHub-Mark-32px.e5dca3b6.png";
 },{"../Store/store":"eSzR","./FormEvant/inputTypeEvent":"SeSj","./FormEvant/onChengeSelectorCountry":"PmkG","./FormEvant/inputTypeCountry":"FTqO"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./Components/App"),r=require("./Events/mainIvent"),t=require("./Store/eventsReducer"),s=n(require("./Store/store"));function n(e){return e&&e.__esModule?e:{default:e}}s.default.dispatch((0,t.getEvents)()),(0,e.App)(),(0,r.mainEvents)();
 },{"./sass/main.scss":"clu1","./Components/App":"YOO8","./Events/mainIvent":"Vt6Z","./Store/eventsReducer":"ieTr","./Store/store":"eSzR"}]},{},["Focm"], null)
-//# sourceMappingURL=/Team3ProjectJS/src.a032e04c.js.map
+//# sourceMappingURL=/Team3ProjectJS/src.5f281184.js.map
