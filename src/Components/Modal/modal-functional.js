@@ -4,8 +4,8 @@ import { onModalChange } from '../../Store/formReducer';
 export const modalEvent = () => {
   const modalBackdrop = document.querySelector('.backdrop');
   const btnModalClose = document.querySelector('.btn-modal-close');
-// const modalPrev = document.getElementById('p');
-// const modalNext = document.getElementById('n');
+  // const modalPrev = document.getElementById('p');
+  // const modalNext = document.getElementById('n');
 
 
   window.addEventListener('keydown', onEscCloseModal)
