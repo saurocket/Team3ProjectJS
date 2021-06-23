@@ -2,14 +2,14 @@ body {
   margin: 0;
 }
 
-.preloader {
+#preloader {
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   background: #0e0e0e;
-  z-index: 1001;
+  z-index: 999;
 }
 
 .preloader__row {
@@ -58,12 +58,14 @@ body {
   }
 }
 
-.loaded_hiding .preloader {
-  transition: 0.3s opacity;
-  opacity: 0;
+.visible {
+visibility: visible;
+opacity: 1;
+transition: opacity 2s linear;
 }
 
-.loaded .preloader {
-  display: none;
+.hidden {
+visibility: hidden;
+opacity: 0;
+transition: visibility 0s 2s, opacity 2s linear;
 }
-
