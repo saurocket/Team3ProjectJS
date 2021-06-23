@@ -1,5 +1,5 @@
 
-const tempSrc = 'https://i40.fastpic.ru/big/2012/0907/5b/70b76de8433b0a78cfb445378217025b.jpg'
+const tempSrc = 'https://i115.fastpic.ru/thumb/2021/0623/08/_2320c7d1bd223718e903206c0fb88808.jpeg'
 
 export const Card = (src = tempSrc ,event = 'Slipknot', date = '13-05-2021', place = 'Palace of Ukraine', id= 'default') => {
   const element = `
