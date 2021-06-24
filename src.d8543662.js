@@ -94,4 +94,4 @@ function e(){return new Promise(e=>{setTimeout(e,700)})}e().then(()=>{let e=docu
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./Components/App"),r=require("./Events/mainIvent"),s=require("./Store/eventsReducer"),n=i(require("./Store/store")),t=require("./Events/HistoryURL/parsURL");function i(e){return e&&e.__esModule?e:{default:e}}require("./Components/Main/preloader"),(0,e.App)(),(0,t.parseUrl)(),(0,r.mainEvents)();
 },{"./sass/main.scss":"clu1","./Components/App":"YOO8","./Events/mainIvent":"Vt6Z","./Store/eventsReducer":"ieTr","./Store/store":"eSzR","./Events/HistoryURL/parsURL":"XE9L","./Components/Main/preloader":"H8b7"}]},{},["Focm"], null)
-//# sourceMappingURL=/Team3ProjectJS/src.78f60f26.js.map
+//# sourceMappingURL=/Team3ProjectJS/src.d8543662.js.map
