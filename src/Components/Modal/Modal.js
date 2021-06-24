@@ -78,7 +78,7 @@ export const Modal = (root, modalFlag) => {
       total += `
               <div class="price-info">
                 <img src="${codePic}" alt="ticket_code" class="price-code" />
-               
+
                 <div class="price-text">
                   <span class="prcie-type">${amount.type}</span>
                   <span class="price-value-min">${amount.min}</span>
@@ -91,7 +91,7 @@ export const Modal = (root, modalFlag) => {
     }, '');
     if (state.dates.status.code === "onsale") {
       elements += `
-              <a href="" class="buy-ticked-link">BUY TICKETS</a>
+              <a href="${state.url}" class="buy-ticked-link">BUY TICKETS</a>
             `;
     }
   }
@@ -105,10 +105,14 @@ export const Modal = (root, modalFlag) => {
           </div>
         </div>
         <div class="author-block">
-          <a href="https://en.wikipedia.org/wiki/Main_Page" target="blank" class="author-link"
+          <a href="https://en.wikipedia.org/wiki/Main_Page" class="author-link"
             >MORE FROM THIS AUTHOR</a
           >
         </div>
+        <ul class="author-block_more" style="display: none">
+
+
+        </ul>
         <div class="modal-arrow_block">
           <button class="prev-next-btn" style="display: none;" id="p">«</button>
           <button class="prev-next-btn" style="display: none;" id="n">»</button>
