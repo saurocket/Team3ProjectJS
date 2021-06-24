@@ -9,7 +9,7 @@ export const Header = (root) => {
   const elements =`<header>
 
              <div class="header-container">
-             <a href="https://saurocket.github.io/Team3ProjectJS/?keyword=null&countryCode=null&currentPage=1&inputCountry=null&modal=false&id=null" target="blank" class="header-logo">
+             <a href="https://saurocket.github.io/Team3ProjectJS/?keyword=null&countryCode=null&currentPage=1&inputCountry=null&modal=false&id=null" class="header-logo">
       <picture class="header-img">
 
                     <source srcset="${logMob}" media="(max-width:767px") />
