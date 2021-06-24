@@ -9,7 +9,7 @@ export const ErrorMessage = () => {
     return;
   }
   eventListRef.innerHTML = ''
-  const textAlert = `<p class="errorMessage">Sorry but you have entered wrong request. :( Please, fill the correct request or you will die! HA-HA-HA:)</p>`
+  const textAlert = `<p class="errorMessage">Sorry, but you have entered wrong request :( <br>Please, fill the correct request or you will stay at home ;)</p>`
   eventListRef.insertAdjacentHTML('beforeend', textAlert)
   return
 }
