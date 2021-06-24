@@ -9,12 +9,15 @@ export const Header = (root) => {
   const elements =`<header>
 
              <div class="header-container">
+             <a href="http://localhost:1234/?keyword=null&countryCode=null&currentPage=1&modal=false&id=null" target="blank" class="header-logo">
       <picture class="header-img">
+
                     <source srcset="${logMob}" media="(max-width:767px") />
                     <source srcset="${logTab}" media="(max-width:1280px") />
                     <source srcset="${logDesc}" media="(min-width:1280px") />
                     <img src="${logDesc}" alt="Логотип">
                 </picture>
+                </a>
                 <h1 class="header-name">FIND BEST EVENTS <br>
              AROUND THE WORLD</h1>
 
