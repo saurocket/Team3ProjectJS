@@ -45,16 +45,8 @@ header {
     }
   }
   .header-img {
-    width: 180px;
     position: absolute;
     left: 0;
-
-    @media screen and (min-width: 768px) {
-      width: 302px;
-    }
-    @media screen and (min-width: 1280px) {
-      width: 402px
-    }
   }
   .header-name {
     @include container();
